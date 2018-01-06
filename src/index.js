@@ -1,5 +1,6 @@
 import React from 'react';  // Imports the core React library which works with react components
 import ReactDom from 'react-dom'; // used to add components to the DOM (the page)
+import SearchBar from 'searchBar';
 
 const API_KEY  = 'AIzaSyBBv8MK66S0N2z82eydAzZwPZj1ZavOTyY';  // API_KEY for youtube
 
