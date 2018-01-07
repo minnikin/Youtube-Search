@@ -1,4 +1,4 @@
-import React from 'react';  // Imports the core React library which works with react components
+import React, {Component} from 'react';  // Imports the core React library which works with react components
 import ReactDom from 'react-dom'; // used to add components to the DOM (the page)
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/searchBar';  // import the searchBar component
@@ -13,12 +13,14 @@ YTSearch({key: API_KEY, term: 'surfboards'}, function(data){
 // component should produce some HTML
 // this is a factory a class and not an instance of the component
 
-const App = () =>  {       // ES6 const is used for a App, so the value returned to it will not change
-    return (
-    <div>
-        <SearchBar />
-    </div>
-    );      // this is JSX, which looks like HTML, but is actually javascript
+class App extends Component {       // ES6 const is used for a App, so the value returned to it will not change
+    render() {
+        return (
+        <div>
+            <SearchBar />
+        </div>
+        );      // this is JSX, which looks like HTML, but is actually javascript
+    }
 }
 
 
