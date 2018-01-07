@@ -1,8 +1,13 @@
 import React from 'react';  // Imports the core React library which works with react components
 import ReactDom from 'react-dom'; // used to add components to the DOM (the page)
+import YTSearch from 'youtube-api-search';
 import SearchBar from './components/searchBar';  // import the searchBar component
 
 const API_KEY  = 'AIzaSyBBv8MK66S0N2z82eydAzZwPZj1ZavOTyY';  // API_KEY for youtube
+
+YTSearch({key: API_KEY, term: 'surfboards'}, function(data){
+    console.log(data);
+});
 
 // create a new component
 // component should produce some HTML
