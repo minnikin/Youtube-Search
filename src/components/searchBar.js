@@ -14,11 +14,21 @@ class SearchBar extends Component  {
     // the render function uses a fat arrow to take an event and use the value to set the state
     render() {
         return (
-        <div>
-            <input onChange = {event => this.setState({ term: event.target.value})} />
-            Value of the input: {this.state.term}
+        <div className="search-bar">
+            <input 
+                value={this.state.term}
+                onChange = {event => this.onInputChange(event.target.value)} />
+             
         </div>
         );
+        //could add this to the div to see the contents of the search bar
+        // Value of the input: {this.state.term}
+    }
+
+    // this is fired when the input changes in the search bar
+    onInputChange(term){
+        this.setState({term}); //set the new state
+        this.props.onSearchTermChange(term);  // call onSearchTermChange
     }
 
 }
